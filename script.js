@@ -104,7 +104,7 @@ commands = (speechToText) => {
         }
         book = bookConstruct.join();
       }
-      if (book !== "";) {
+      if (book !== "") {
         let chapterContruct = [];
         for (i = 1; i <= 10; i++) {
           a = i.toString;
@@ -117,6 +117,7 @@ commands = (speechToText) => {
       }
 
       window.location.href = ("gospellibrary://content/" + category + work + book + chapter);
+      print(`${("gospellibrary://content/" + category + work + book + chapter)} -- orders recieved --`);
     }
     /*if(commandList.includes("maps" || "directions")){
       //search google maps for speechToText;
