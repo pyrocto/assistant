@@ -7,7 +7,7 @@ commands = (speechToText) => {
   let commandList = speechToText.split(" ");
   if (commandList.includes("what") || commandList.includes("how") || commandList.includes("who")) {
     let searchTerms = commandList.join("+")
-    window.location.replace("https://www.google.com/search?q=" + searchTerms);
+    window.location.href="https://www.google.com/search?q=" + searchTerms;
   }
   /*if(commandList.includes("maps" || "directions")){
     //search google maps for speechToText;
