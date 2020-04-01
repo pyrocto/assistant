@@ -1,5 +1,6 @@
 // p=document.createElement('p');p.id='transcript';document.body.appendChild(p);
 var transcript = document.getElementById("transcript");
+var response = document.getElementById("response");
 var speech = new webkitSpeechRecognition();
 var i = 0;
 var recognizing = true;
@@ -59,7 +60,7 @@ speech.onresult = (event) => {
       speech.stop();
       recognizing = false;
       // process the text
-      print(`${speechToText} -- orders recieved --`);
+      response.innerText = `${speechToText} -- orders recieved --`;
       commands(speechToText);
     }
   }, 1500);
