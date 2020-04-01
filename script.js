@@ -1,6 +1,7 @@
 // p=document.createElement('p');p.id='transcript';document.body.appendChild(p);
 var transcript = document.getElementById("transcript");
 var response = document.getElementById("response");
+var debug = document.getElementById("debug");
 var speech = new webkitSpeechRecognition();
 var i = 0;
 var recognizing = true;
@@ -53,6 +54,10 @@ commands = (speechToText) => {
 
 speech.onresult = (event) => {
   const speechToText = event.results[0][0].transcript;
+  
+  var x = [...event.results].map(x => [...x]);
+  debug.innerText = JSON.stringify(x);
+  
   transcript.innerText = speechToText;
   setTimeout(() => {
     if (transcript.innerText === speechToText && recognizing) {
