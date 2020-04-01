@@ -1,3 +1,4 @@
+// For when we're messing around with squarefree shell
 // p=document.createElement('p');p.id='transcript';document.body.appendChild(p);
 var transcript = document.getElementById("transcript");
 var speech = new webkitSpeechRecognition();
