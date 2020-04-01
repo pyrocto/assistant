@@ -52,8 +52,7 @@ commands = (speechToText) => {
 };
 
 speech.onresult = (event) => {
-  const speechToText = [...event.results]
-    .map(r => r[0].transcript).join('');
+  const speechToText = event.results[event.resultIndex][0].transcript;
   transcript.innerText = speechToText;
   setTimeout(() => {
     if (transcript.innerText === speechToText && recognizing) {
