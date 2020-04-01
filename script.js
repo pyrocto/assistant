@@ -66,4 +66,6 @@ speech.onresult = (event) => {
   }, 1500);
 };
 speech.continuous = true;
+speech.interimResults = true;
+speech.maxAlternatives = 1;
 speech.start();
