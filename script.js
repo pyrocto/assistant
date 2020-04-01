@@ -52,7 +52,7 @@ commands = (speechToText) => {
 };
 
 speech.onresult = (event) => {
-  const speechToText = event.results[event.resultIndex][0].transcript;
+  const speechToText = event.results[0][0].transcript;
   transcript.innerText = speechToText;
   setTimeout(() => {
     if (transcript.innerText === speechToText && recognizing) {
