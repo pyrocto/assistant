@@ -55,7 +55,7 @@ commands = (speechToText) => {
 speech.onresult = (event) => {
   const speechToText = event.results[0][0].transcript;
   
-  var x = [...event.results].map(x => [...x]);
+  var x = [...event.results].map(result => [...result].map(x => {transcript:x.transcript}));
   debug.innerText = JSON.stringify(x);
   
   transcript.innerText = speechToText;
